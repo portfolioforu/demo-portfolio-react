@@ -6,6 +6,7 @@ import About from './pages/About'
 import Contact from './pages/Contact'
 import Experience from './pages/Experience'
 import Home from './pages/Home'
+import ProjectDetail from './pages/ProjectDetail'
 import Projects from './pages/Projects'
 
 export default function App() {
@@ -19,6 +20,7 @@ export default function App() {
           <Route path="/a-propos" element={<About />} />
           <Route path="/parcours" element={<Experience />} />
           <Route path="/projets" element={<Projects />} />
+          <Route path="/projets/:slug" element={<ProjectDetail />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </main>
