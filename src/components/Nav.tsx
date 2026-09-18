@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
+import { Link, NavLink } from 'react-router-dom'
 
 const links = [
-  { href: '#apropos', label: 'À propos' },
-  { href: '#parcours', label: 'Parcours' },
-  { href: '#projets', label: 'Projets' },
-  { href: '#contact', label: 'Contact' },
+  { to: '/a-propos', label: 'À propos' },
+  { to: '/parcours', label: 'Parcours' },
+  { to: '/projets', label: 'Projets' },
+  { to: '/contact', label: 'Contact' },
 ]
 
 export default function Nav() {
@@ -29,38 +30,42 @@ export default function Nav() {
       }`}
     >
       <nav className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
-        <a href="#top" className="font-display text-lg font-semibold tracking-tight text-ink">
+        <Link to="/" className="font-display text-xl font-semibold tracking-tight text-ink">
           Léa<span className="text-coral">.</span>
-        </a>
+        </Link>
 
         <ul className="hidden items-center gap-8 md:flex">
           {links.map((l) => (
-            <li key={l.href}>
-              <a
-                href={l.href}
-                className="text-sm font-medium text-ink-soft transition-colors hover:text-coral"
+            <li key={l.to}>
+              <NavLink
+                to={l.to}
+                className={({ isActive }) =>
+                  `text-base font-medium transition-colors hover:text-coral ${
+                    isActive ? 'text-coral' : 'text-ink-soft'
+                  }`
+                }
               >
                 {l.label}
-              </a>
+              </NavLink>
             </li>
           ))}
         </ul>
 
-        <a
-          href="#contact"
-          className="hidden rounded-full bg-ink px-5 py-2 text-sm font-medium text-cream transition-colors hover:bg-coral md:inline-block"
+        <Link
+          to="/contact"
+          className="hidden rounded-full bg-ink px-5 py-2 text-base font-medium text-cream transition-colors hover:bg-coral md:inline-block"
         >
           Me contacter
-        </a>
+        </Link>
 
         <button
           onClick={() => setOpen((v) => !v)}
-          className="flex h-9 w-9 flex-col items-center justify-center gap-1.5 md:hidden"
+          className="flex h-10 w-10 flex-col items-center justify-center gap-1.5 md:hidden"
           aria-label="Ouvrir le menu"
         >
-          <span className={`h-px w-6 bg-ink transition-transform ${open ? 'translate-y-2 rotate-45' : ''}`} />
-          <span className={`h-px w-6 bg-ink transition-opacity ${open ? 'opacity-0' : ''}`} />
-          <span className={`h-px w-6 bg-ink transition-transform ${open ? '-translate-y-2 -rotate-45' : ''}`} />
+          <span className={`h-0.5 w-6 bg-ink transition-transform ${open ? 'translate-y-2 rotate-45' : ''}`} />
+          <span className={`h-0.5 w-6 bg-ink transition-opacity ${open ? 'opacity-0' : ''}`} />
+          <span className={`h-0.5 w-6 bg-ink transition-transform ${open ? '-translate-y-2 -rotate-45' : ''}`} />
         </button>
       </nav>
 
@@ -72,14 +77,16 @@ export default function Nav() {
           className="flex flex-col gap-1 border-t border-line bg-cream px-6 pb-4 md:hidden"
         >
           {links.map((l) => (
-            <li key={l.href}>
-              <a
-                href={l.href}
+            <li key={l.to}>
+              <NavLink
+                to={l.to}
                 onClick={() => setOpen(false)}
-                className="block py-3 text-sm font-medium text-ink-soft"
+                className={({ isActive }) =>
+                  `block py-3 text-base font-medium ${isActive ? 'text-coral' : 'text-ink-soft'}`
+                }
               >
                 {l.label}
-              </a>
+              </NavLink>
             </li>
           ))}
         </motion.ul>

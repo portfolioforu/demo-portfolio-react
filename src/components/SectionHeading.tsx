@@ -11,7 +11,7 @@ export default function SectionHeading({
 }) {
   return (
     <Reveal className={center ? 'text-center' : ''}>
-      <span className="text-xs font-semibold uppercase tracking-[0.18em] text-coral">
+      <span className="text-sm font-semibold uppercase tracking-[0.18em] text-coral">
         {eyebrow}
       </span>
       <h2 className="font-display mt-3 text-3xl font-medium tracking-tight text-ink md:text-4xl">

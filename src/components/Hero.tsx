@@ -1,5 +1,6 @@
 import { motion, type Variants } from 'framer-motion'
 import { ArrowDown, MapPin, Sparkles } from 'lucide-react'
+import { Link } from 'react-router-dom'
 import { profile } from '../data/content'
 
 const container: Variants = {
@@ -34,7 +35,7 @@ export default function Hero() {
       >
         <motion.span
           variants={item}
-          className="mb-6 inline-flex items-center gap-2 rounded-full border border-line bg-cream-dim px-4 py-1.5 text-xs font-medium text-ink-soft"
+          className="mb-6 inline-flex items-center gap-2 rounded-full border border-line bg-cream-dim px-4 py-1.5 text-sm font-medium text-ink-soft"
         >
           <Sparkles className="h-3.5 w-3.5 text-coral" />
           {profile.availability}
@@ -53,29 +54,29 @@ export default function Hero() {
 
         <motion.p
           variants={item}
-          className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-ink-soft md:text-lg"
+          className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-ink-soft"
         >
           {profile.tagline}
         </motion.p>
 
-        <motion.div variants={item} className="mt-4 flex items-center justify-center gap-1.5 text-sm text-ink-faint">
+        <motion.div variants={item} className="mt-4 flex items-center justify-center gap-1.5 text-base text-ink-faint">
           <MapPin className="h-4 w-4" />
           {profile.location}
         </motion.div>
 
         <motion.div variants={item} className="mt-10 flex flex-wrap items-center justify-center gap-4">
-          <a
-            href="#projets"
-            className="rounded-full bg-ink px-7 py-3 text-sm font-medium text-cream transition-transform hover:-translate-y-0.5 hover:bg-coral"
+          <Link
+            to="/projets"
+            className="rounded-full bg-ink px-7 py-3 text-base font-medium text-cream transition-transform hover:-translate-y-0.5 hover:bg-coral"
           >
             Voir mes projets
-          </a>
-          <a
-            href="#contact"
-            className="rounded-full border border-line px-7 py-3 text-sm font-medium text-ink transition-colors hover:border-coral hover:text-coral"
+          </Link>
+          <Link
+            to="/contact"
+            className="rounded-full border border-line px-7 py-3 text-base font-medium text-ink transition-colors hover:border-coral hover:text-coral"
           >
             Me contacter
-          </a>
+          </Link>
         </motion.div>
       </motion.div>
 

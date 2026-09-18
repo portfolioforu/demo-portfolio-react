@@ -19,12 +19,12 @@ export default function Experience() {
               className="relative"
             >
               <span className="absolute -left-[2.35rem] top-1.5 h-3 w-3 rounded-full border-2 border-coral bg-cream" />
-              <span className="text-xs font-semibold uppercase tracking-wide text-coral">
+              <span className="text-sm font-semibold uppercase tracking-wide text-coral">
                 {e.period}
               </span>
               <h3 className="font-display mt-1.5 text-xl font-medium text-ink">{e.title}</h3>
-              <p className="mt-0.5 text-sm font-medium text-ink-faint">{e.org}</p>
-              <p className="mt-2.5 text-sm leading-relaxed text-ink-soft md:text-base">
+              <p className="mt-0.5 text-base font-medium text-ink-faint">{e.org}</p>
+              <p className="mt-2.5 text-base leading-relaxed text-ink-soft">
                 {e.description}
               </p>
             </motion.div>

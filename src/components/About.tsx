@@ -13,7 +13,7 @@ export default function About() {
           <div className="space-y-5">
             {about.paragraphs.map((p, i) => (
               <Reveal key={i} delay={i * 0.08}>
-                <p className="text-base leading-relaxed text-ink-soft md:text-lg">{p}</p>
+                <p className="text-lg leading-relaxed text-ink-soft">{p}</p>
               </Reveal>
             ))}
           </div>
@@ -30,7 +30,7 @@ export default function About() {
                   className="rounded-2xl border border-line bg-cream-dim/60 p-5"
                 >
                   <div className="font-display text-3xl font-semibold text-coral">{s.value}</div>
-                  <div className="mt-1 text-sm text-ink-soft">{s.label}</div>
+                  <div className="mt-1 text-base text-ink-soft">{s.label}</div>
                 </motion.div>
               ))}
             </div>
