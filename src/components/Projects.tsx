@@ -1,0 +1,44 @@
+import { motion } from 'framer-motion'
+import { ArrowUpRight } from 'lucide-react'
+import { projects } from '../data/content'
+import SectionHeading from './SectionHeading'
+
+export default function Projects() {
+  return (
+    <section id="projets" className="bg-cream-dim/50 px-6 py-24 md:py-32">
+      <div className="mx-auto max-w-5xl">
+        <SectionHeading eyebrow="Projets" title="Quelques réalisations" />
+
+        <div className="mt-12 grid gap-6 md:grid-cols-2">
+          {projects.map((p, i) => (
+            <motion.article
+              key={p.title}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-60px' }}
+              transition={{ duration: 0.6, delay: i * 0.08, ease: 'easeOut' }}
+              whileHover={{ y: -6 }}
+              className="group relative overflow-hidden rounded-2xl border border-line bg-white p-7 transition-shadow hover:shadow-xl hover:shadow-coral/10"
+            >
+              <div className="flex items-start justify-between gap-4">
+                <span className="rounded-full bg-coral-dim px-3 py-1 text-xs font-semibold text-coral-deep">
+                  {p.tag}
+                </span>
+                <ArrowUpRight className="h-5 w-5 shrink-0 text-ink-faint transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-coral" />
+              </div>
+
+              <h3 className="font-display mt-5 text-xl font-medium text-ink">{p.title}</h3>
+              <p className="mt-3 text-sm leading-relaxed text-ink-soft md:text-base">
+                {p.description}
+              </p>
+
+              <p className="mt-5 border-t border-line pt-4 text-sm font-medium text-coral-deep">
+                {p.result}
+              </p>
+            </motion.article>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
