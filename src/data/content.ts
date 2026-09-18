@@ -26,6 +26,9 @@ export const about = {
   ],
 }
 
+export const experienceIntro =
+  "Trois expériences en agence et en entreprise, un fil rouge : apprendre en faisant. Chaque étape a ajouté une corde à mon arc, du community management à la stratégie de campagne."
+
 export const experience = [
   {
     period: '2025 — aujourd\'hui',
@@ -33,6 +36,7 @@ export const experience = [
     org: 'Studio Belline, agence créative — Lyon',
     description:
       "Pilotage des réseaux sociaux de 4 clients (mode, food, immobilier), création de calendriers éditoriaux, reporting mensuel de performance.",
+    skillsGained: ['Gestion multi-comptes', 'Stratégie de contenu', 'Reporting client'],
   },
   {
     period: '2024',
@@ -40,6 +44,7 @@ export const experience = [
     org: 'Maison Ferrand — Grenoble',
     description:
       "Organisation d'un lancement produit (200 invités), coordination avec 6 prestataires, gestion du budget et bilan post-événement.",
+    skillsGained: ['Coordination prestataires', 'Gestion budget', 'Relations presse'],
   },
   {
     period: '2023',
@@ -47,13 +52,21 @@ export const experience = [
     org: 'Bloom Cosmétiques — Lyon',
     description:
       "Refonte de la ligne éditoriale Instagram, +85% d'engagement en 4 mois, première expérience de gestion de communauté en direct.",
+    skillsGained: ['Direction artistique feed', 'Animation de communauté', 'Analyse de performance'],
   },
   {
     period: '2022',
     title: 'Bac général, spécialités Humanités & Langues',
     org: 'Lycée Louis-le-Grand-adjacent — Grenoble',
     description: 'Mention Bien. Option théâtre en parallèle pendant 3 ans.',
+    skillsGained: ['Prise de parole en public', 'Expression écrite', 'Anglais renforcé'],
   },
+]
+
+export const certifications = [
+  { name: 'Google Analytics 4', org: 'Google Skillshop', year: '2024' },
+  { name: 'Meta Certified Digital Marketing Associate', org: 'Meta Blueprint', year: '2024' },
+  { name: 'Certification HubSpot Content Marketing', org: 'HubSpot Academy', year: '2023' },
 ]
 
 export const skills = [
