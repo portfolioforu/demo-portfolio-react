@@ -1,23 +1,26 @@
-import About from './components/About'
-import Contact from './components/Contact'
-import Experience from './components/Experience'
+import { Route, Routes } from 'react-router-dom'
 import Footer from './components/Footer'
-import Hero from './components/Hero'
 import Nav from './components/Nav'
-import Projects from './components/Projects'
-import Skills from './components/Skills'
+import ScrollToTop from './components/ScrollToTop'
+import About from './pages/About'
+import Contact from './pages/Contact'
+import Experience from './pages/Experience'
+import Home from './pages/Home'
+import Projects from './pages/Projects'
 
 export default function App() {
   return (
     <div className="min-h-screen bg-cream text-ink">
+      <ScrollToTop />
       <Nav />
       <main>
-        <Hero />
-        <About />
-        <Experience />
-        <Skills />
-        <Projects />
-        <Contact />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/a-propos" element={<About />} />
+          <Route path="/parcours" element={<Experience />} />
+          <Route path="/projets" element={<Projects />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
       </main>
       <Footer />
     </div>
