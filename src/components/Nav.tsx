@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import { Link, NavLink } from 'react-router-dom'
 
 const links = [
+  { to: '/', label: 'Accueil', end: true },
   { to: '/a-propos', label: 'À propos' },
   { to: '/parcours', label: 'Parcours' },
   { to: '/projets', label: 'Projets' },
@@ -39,6 +40,7 @@ export default function Nav() {
             <li key={l.to}>
               <NavLink
                 to={l.to}
+                end={l.end}
                 className={({ isActive }) =>
                   `text-base font-medium transition-colors hover:text-coral ${
                     isActive ? 'text-coral' : 'text-ink-soft'
@@ -80,6 +82,7 @@ export default function Nav() {
             <li key={l.to}>
               <NavLink
                 to={l.to}
+                end={l.end}
                 onClick={() => setOpen(false)}
                 className={({ isActive }) =>
                   `block py-3 text-base font-medium ${isActive ? 'text-coral' : 'text-ink-soft'}`
